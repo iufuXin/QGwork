@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX Demo</title>
+    <!-- 引入jQuery库 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<h2>User Information</h2>
+<div id="user-info">
+    <p>Name: <span id="name"></span></p>
+    <p>Age: <span id="age"></span></p>
+    <p>Email: <span id="email"></span></p>
+</div>
+
+<script>
+    // 当页面加载完成后执行以下代码
+    $(document).ready(function(){
+        // 发送 AJAX 请求
+        $.ajax({
+            // 设置请求的URL
+            url: 'getData',
+            // 设置请求的类型
+            type: 'GET',
+            // 设置预期服务器返回的数据类型
+            dataType: 'json',
+            // 请求成功时执行的回调函数
+            success: function(data){
+                // 将返回的数据显示在页面上
+                $('#name').text(data.name);
+                $('#age').text(data.age);
+                $('#email').text(data.email);
+            },
+            // 请求失败时执行的回调函数
+            error: function(xhr, status, error){
+                console.error('Error:', error);
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
