@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liufu.mapper.UserMapper">
+
+    <!-- 定义一个查询语句-->
+    <select id="selectUser"  resultType="com.liufu.pojo.User">
+        <!--SELECT id,username,password
+        FROM dbl1.tb_user
+        where  username = #{username} AND password = #{password}-->
+    </select>
+
+</mapper>
